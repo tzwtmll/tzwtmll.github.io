@@ -15,14 +15,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18
-    - name: 安装 Pnpm 🧬
-      uses: pnpm/action-setup@v2
-      id: pnpm-install
-      with:
-          version: 7
-          run_install: true
     - name: 安装依赖 ⚙️
-      run: pnpm install
+      run: npm install
     - name: 打包 🏗️
       run: |
         npm run build
