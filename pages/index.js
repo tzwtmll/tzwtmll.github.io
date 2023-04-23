@@ -30,7 +30,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -45,17 +45,9 @@ export default function Home() {
 
         <div className={styles.center}>
           <div>
-            <span style={{ fontSize: '100px', background: 'block' }}>pdd</span>
+            <span className={styles.pdd}>pdd</span>
             <span style={{ marginLeft: '20px', fontSize: '20px' }}>.blog</span>
           </div>
-          {/* <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          /> */}
         </div>
 
         <div className={styles.grid}>
@@ -69,7 +61,8 @@ export default function Home() {
               Docs <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
+              {/* Find in-depth information about Next.js features and&nbsp;API. */}
+              查找有关 前端 技术与文章和 原理 的技术博客。
             </p>
           </a>
 
@@ -83,7 +76,9 @@ export default function Home() {
               Image <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
+              {/* Learn about Next.js in an interactive course with&nbsp;quizzes! */}
+              {/* 在带有测验的交互式课程中了解 Next.js！ */}
+              了解我的摄影作品 或提出建议 或指出不足
             </p>
           </a>
 
