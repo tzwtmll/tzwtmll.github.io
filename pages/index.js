@@ -17,8 +17,12 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
+            <span style={{ fontSize: '20px' }}>
+              Welcome to my homepage&nbsp;
+            </span>
+            <code className={styles.code}>
+              please accept my thanks, now and always.
+            </code>
           </p>
           <div>
             <a
@@ -40,19 +44,23 @@ export default function Home() {
         </div>
 
         <div className={styles.center}>
-          <Image
+          <div>
+            <span style={{ fontSize: '100px', background: 'block' }}>pdd</span>
+            <span style={{ marginLeft: '20px', fontSize: '20px' }}>.blog</span>
+          </div>
+          {/* <Image
             className={styles.logo}
             src="/next.svg"
             alt="Next.js Logo"
             width={180}
             height={37}
             priority
-          />
+          /> */}
         </div>
 
         <div className={styles.grid}>
           <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://tzwtmll.github.io/docs"
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
@@ -66,13 +74,13 @@ export default function Home() {
           </a>
 
           <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://tzwtmll.github.io/image"
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
+              Image <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
               Learn about Next.js in an interactive course with&nbsp;quizzes!
