@@ -18,7 +18,7 @@ export default function Home() {
         <div className={styles.description}>
           <p>
             <span style={{ fontSize: '20px' }}>
-              Welcome to my homepage&nbsp;
+              Welcome to my blog&nbsp;
             </span>
             <code className={styles.code}>
               please accept my thanks, now and always.
