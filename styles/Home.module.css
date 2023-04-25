@@ -86,6 +86,7 @@
   width: 480px;
   height: 360px;
   margin-left: -500px;
+  z-index: -1;
 }
 
 .center::after {
@@ -229,6 +230,4 @@
 }
 .pdd {
   font-size: 100px;
-  /* background: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%); */
-  /* filter: blur(20px); */
 }
