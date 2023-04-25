@@ -78,7 +78,19 @@ export default function Home() {
               了解我的摄影作品 或提出建议 或指出不足
             </p>
           </a>
-
+          <a
+            href="https://tzwtmll.github.io/phototheme"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={inter.className}>
+              Theme <span>-&gt;</span>
+            </h2>
+            <p className={inter.className}>
+              摄影主题在后续中会逐渐完善 现在正在开发中
+            </p>
+          </a>
           <a
             href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -90,21 +102,6 @@ export default function Home() {
             </h2>
             <p className={inter.className}>
               Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
             </p>
           </a>
         </div>
