@@ -98,7 +98,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              文档2.0 <span>-&gt;</span>
+              Docs 2.0 <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
               更加简洁的二代文档&nbsp;正在开发中.
