@@ -39,14 +39,14 @@ export default function Home() {
             </a>
           </div>
         </div>
-
+        {/* 主体 */}
         <div className={styles.center}>
           <div>
             <span className={styles.pdd}>pdd</span>
             <span style={{ marginLeft: '20px', fontSize: '20px' }}>.blog</span>
           </div>
         </div>
-
+        {/* 导航 */}
         <div className={styles.grid}>
           <a
             href="https://tzwtmll.github.io/docs"
@@ -92,16 +92,16 @@ export default function Home() {
             </p>
           </a>
           <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://tzwtmll.github.io/v2docs"
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
+              文档2.0 <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
+              更加简洁的二代文档&nbsp;正在开发中.
             </p>
           </a>
         </div>
