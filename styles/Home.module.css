@@ -79,7 +79,40 @@
   position: relative;
   padding: 4rem 0;
 }
-
+.simple {
+  animation: simplefadeIn 10s infinite alternate ease;
+  font-size: 50px;
+  position: absolute;
+  left: -60px;
+}
+.only {
+  animation: onlyfadeIn 10s infinite alternate ease;
+  font-size: 50px;
+  position: absolute;
+  right: -1rem;
+}
+@keyframes simplefadeIn {
+  0% {
+    opacity: 0.01;
+  }
+  50% {
+    opacity: 0.02;
+  }
+  100% {
+    opacity: 0.05;
+  }
+}
+@keyframes onlyfadeIn {
+  0% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.02;
+  }
+  100% {
+    opacity: 0.02;
+  }
+}
 .center::before {
   background: var(--secondary-glow);
   border-radius: 50%;

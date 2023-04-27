@@ -45,6 +45,10 @@ export default function Home() {
             <span className={styles.pdd}>pdd</span>
             <span style={{ marginLeft: '20px', fontSize: '20px' }}>.blog</span>
           </div>
+          {/* 简单 */}
+          <div className={styles.simple}>简单</div>
+          <div className={styles.only}>唯一</div>
+          {/* 唯一 */}
         </div>
         {/* 导航 */}
         <div className={styles.grid}>
@@ -59,7 +63,7 @@ export default function Home() {
             </h2>
             <p className={inter.className}>
               {/* Find in-depth information about Next.js features and&nbsp;API. */}
-              查找有关 前端 技术与文章和 原理 的技术博客。
+              查找有关前端技术与文章和原理的技术博客。
             </p>
           </a>
 
@@ -75,7 +79,7 @@ export default function Home() {
             <p className={inter.className}>
               {/* Learn about Next.js in an interactive course with&nbsp;quizzes! */}
               {/* 在带有测验的交互式课程中了解 Next.js！ */}
-              了解我的摄影作品 或提出建议 或指出不足
+              了解我的摄影作品，或提出建议，或指出不足
             </p>
           </a>
           <a
