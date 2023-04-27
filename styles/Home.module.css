@@ -99,18 +99,18 @@
     opacity: 0.02;
   }
   100% {
-    opacity: 0.05;
+    opacity: 0.04;
   }
 }
 @keyframes onlyfadeIn {
   0% {
-    opacity: 0.05;
+    opacity: 0.04;
   }
   50% {
     opacity: 0.02;
   }
   100% {
-    opacity: 0.02;
+    opacity: 0.01;
   }
 }
 .center::before {
