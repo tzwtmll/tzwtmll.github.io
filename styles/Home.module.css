@@ -95,18 +95,18 @@
   0% {
     opacity: 0.01;
   }
-  50% {
+  80% {
     opacity: 0.02;
   }
   100% {
-    opacity: 0.04;
+    opacity: 0.03;
   }
 }
 @keyframes onlyfadeIn {
   0% {
     opacity: 0.04;
   }
-  50% {
+  20% {
     opacity: 0.02;
   }
   100% {
