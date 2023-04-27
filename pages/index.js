@@ -92,16 +92,17 @@ export default function Home() {
             </p>
           </a>
           <a
-            href="https://tzwtmll.github.io/v2docs"
+            href="https://vercel.com/new/templates"
             className={styles.card}
             target="_blank"
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Docs 2.0 <span>-&gt;</span>
+              Templates <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              更加简洁的二代文档&nbsp;正在开发中.
+              Discover and deploy boilerplate example Next.js
+              projects.&nbsp;projects.
             </p>
           </a>
         </div>
