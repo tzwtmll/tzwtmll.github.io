@@ -7,11 +7,6 @@ const inter = Inter({ subsets: ['latin'] })
 import { Input } from '@nextui-org/react'
 import { SendButton } from './common/SendButton'
 import { SendIcon } from './common/SendIcon'
-const { Configuration, OpenAIApi } = require('openai')
-const configuration = new Configuration({
-  apiKey: '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',
-})
-const openai = new OpenAIApi(configuration)
 export default function Home() {
   // 搜索数据
   const ref = useRef()
@@ -21,11 +16,13 @@ export default function Home() {
    * @description 搜索
    */
   const searchGPT = async () => {
-    const completion = await openai.createCompletion({
-      model: 'text-davinci-003',
-      prompt: ref.current.value,
-    })
-    console.log(completion.data.choices[0].text)
+    let result = await fetch('/api/chargptApi', {
+      method: 'post',
+      body: ref.current.value,
+    }).then((res) => res.json())
+    if (result.code === 0) {
+      console.log(res)
+    }
   }
   return (
     <>
