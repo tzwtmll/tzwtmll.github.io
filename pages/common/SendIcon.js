@@ -27,7 +27,7 @@ export const SendIcon = ({
     //   </svg>
     <svg
       t="1683533164107"
-      class="icon"
+      className="icon"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
