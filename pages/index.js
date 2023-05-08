@@ -9,7 +9,7 @@ import { SendButton } from './common/SendButton'
 import { SendIcon } from './common/SendIcon'
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 })
 const openai = new OpenAIApi(configuration)
 export default function Home() {
