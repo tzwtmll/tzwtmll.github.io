@@ -1,10 +1,32 @@
+import { Fragment, useRef, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
-
+import { Input } from '@nextui-org/react'
+import { SendButton } from './common/SendButton'
+import { SendIcon } from './common/SendIcon'
+const { Configuration, OpenAIApi } = require('openai')
+const configuration = new Configuration({
+  apiKey: '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',
+})
+const openai = new OpenAIApi(configuration)
 export default function Home() {
+  // 搜索数据
+  const ref = useRef()
+  // 是否开启openai
+  const [isOpenai, setIsOpenai] = useState(false)
+  /**
+   * @description 搜索
+   */
+  const searchGPT = async () => {
+    const completion = await openai.createCompletion({
+      model: 'text-davinci-003',
+      prompt: ref.current.value,
+    })
+    console.log(completion.data.choices[0].text)
+  }
   return (
     <>
       <Head>
@@ -14,31 +36,57 @@ export default function Home() {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            <span style={{ fontSize: '20px' }}>Welcome to my blog&nbsp;</span>
-            <code className={styles.code}>
-              please accept my thanks, now and always.
-            </code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By
-              <Image
-                src="vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
+        {isOpenai ? (
+          <Fragment>
+            <div>
+              <Input
+                ref={ref}
+                clearable
+                contentRightStyling={false}
+                placeholder="Ask a question..."
+                aria-label="Search"
+                contentRight={
+                  <SendButton onClick={searchGPT}>
+                    <div className={styles.send}>
+                      <span style={{ marginLeft: '10px' }}>Send</span>
+                      <SendIcon />
+                    </div>
+                  </SendButton>
+                }
               />
-            </a>
-          </div>
-        </div>
+            </div>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <div
+              className={styles.description}
+              onClick={() => setIsOpenai(true)}
+            >
+              <p>
+                <span style={{ fontSize: '20px' }}>
+                  Welcome to my blog&nbsp;
+                </span>
+                <code className={styles.code}>
+                  please accept my thanks, now and always.
+                </code>
+              </p>
+              <div>
+                <a style={{ cursor: 'pointer' }}>
+                  By
+                  <Image
+                    src="photo.svg"
+                    alt="Vercel Logo"
+                    className={styles.vercelLogo}
+                    width={40}
+                    height={40}
+                    priority
+                  />
+                  <span style={{ fontSize: '24px' }}>Openai</span>
+                </a>
+              </div>
+            </div>
+          </Fragment>
+        )}
         {/* 主体 */}
         <div className={styles.center}>
           <div>

@@ -6,7 +6,10 @@
   padding: 6rem;
   min-height: 100vh;
 }
-
+.photoLogo {
+  background-color: aqua;
+  width: 30px;
+}
 .description {
   display: inherit;
   justify-content: inherit;
@@ -16,6 +19,28 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+}
+/* 发送按钮 */
+.send {
+  /* background: linear-gradient(to right, rgb(173, 109, 254), rgb(135, 160, 244)); */
+  /* var(--secondary-glow) */
+  /* var(--primary-glow) */
+  /* background: linear-gradient(
+    to right,
+    var(--secondary-glow),
+    var(--primary-glow)
+  ); */
+  /* background: linear-gradient(to left, rgb(216, 221, 222), white); */
+  /* background-color: rgb(196, 218, 235); */
+  background-color: rgb(216, 221, 222);
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 0 var(--nextui--inputBorderRadius)
+    var(--nextui--inputBorderRadius) 0; */
+  border-radius: var(--nextui--inputBorderRadius);
 }
 
 .description a {
