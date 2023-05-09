@@ -91,7 +91,7 @@ export default function Home() {
                     height={40}
                     priority
                   />
-                  <span style={{ fontSize: '24px' }}>Openai</span>
+                  <span style={{ fontSize: '24px' }}>OpenAI</span>
                 </a>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function Home() {
             <p className={inter.className}>
               {/* Learn about Next.js in an interactive course with&nbsp;quizzes! */}
               {/* 在带有测验的交互式课程中了解 Next.js！ */}
-              了解我的摄影作品，或提出建议，或指出不足
+              了解摄影作品，或提出建议，或指出不足
             </p>
           </a>
           <a
