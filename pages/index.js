@@ -3,11 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
+import { Input, Tooltip, styled } from '@nextui-org/react'
 const inter = Inter({ subsets: ['latin'] })
-import { Input } from '@nextui-org/react'
-import { SendButton } from './common/SendButton'
-import { SendIcon } from './common/SendIcon'
 export default function Home() {
+  // 全局提示
   // 搜索数据
   const ref = useRef()
   // 是否开启openai
@@ -16,12 +15,17 @@ export default function Home() {
    * @description 搜索
    */
   const searchGPT = async () => {
-    let result = await fetch('/api/chargptApi', {
-      method: 'post',
-      body: ref.current.value,
-    }).then((res) => res.json())
-    if (result.code === 0) {
-      console.log(res)
+    try {
+      let result = await fetch('/api/chargptApi', {
+        method: 'post',
+        body: ref.current.value,
+      }).then((res) => res.json())
+      if (result.code === 0) {
+        console.log(res)
+      }
+    } catch (error) {
+      if (error) {
+      }
     }
   }
   return (
@@ -44,10 +48,21 @@ export default function Home() {
                 aria-label="Search"
                 contentRight={
                   <SendButton onClick={searchGPT}>
-                    <div className={styles.send}>
-                      <span style={{ marginLeft: '10px' }}>Send</span>
-                      <SendIcon />
-                    </div>
+                    <Tooltip content={'请确定连接VPN'}>
+                      <div className={styles.send}>
+                        <span style={{ marginLeft: '10px', fontSize: '16px' }}>
+                          Send
+                        </span>
+                        <Image
+                          src="search.svg"
+                          alt="Vercel Logo"
+                          className={styles.vercelLogo}
+                          width={20}
+                          height={24}
+                          priority
+                        />
+                      </div>
+                    </Tooltip>
                   </SendButton>
                 }
               />
@@ -55,10 +70,7 @@ export default function Home() {
           </Fragment>
         ) : (
           <Fragment>
-            <div
-              className={styles.description}
-              onClick={() => setIsOpenai(true)}
-            >
+            <div className={styles.description}>
               <p>
                 <span style={{ fontSize: '20px' }}>
                   Welcome to my blog&nbsp;
@@ -67,7 +79,8 @@ export default function Home() {
                   please accept my thanks, now and always.
                 </code>
               </p>
-              <div>
+              {/* 开启gpt */}
+              <div onClick={() => setIsOpenai(true)}>
                 <a style={{ cursor: 'pointer' }}>
                   By
                   <Image
@@ -151,8 +164,8 @@ export default function Home() {
               Rust <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              面向安全编程 更快的编译速度 更安全的内存管理 相对于C++更加简单
-              广泛运用于前端工具的编写 逐渐完善的生态
+              更安全的内存管理 相对于C++更加简单 广泛运用于webAssembly的编写
+              逐渐完善的生态
             </p>
           </a>
         </div>
@@ -160,3 +173,35 @@ export default function Home() {
     </>
   )
 }
+
+const SendButton = styled('button', {
+  // reset button styles
+  background: 'transparent',
+  border: 'none',
+  padding: 0,
+  margin: 0,
+  // styles
+  width: '80px',
+  margin: '0 10px',
+  dflex: 'center',
+  // bg: '$primary',
+  borderRadius: '$rounded',
+  cursor: 'pointer',
+  transition: 'opacity 0.25s ease 0s, transform 0.25s ease 0s',
+  svg: {
+    size: '100%',
+    padding: '4px',
+    transition: 'transform 0.25s ease 0s, opacity 200ms ease-in-out 50ms',
+    boxShadow: '0 5px 20px -5px rgba(0, 0, 0, 0.1)',
+  },
+  '&:hover': {
+    opacity: 0.8,
+  },
+  '&:active': {
+    transform: 'scale(0.9)',
+    svg: {
+      transform: 'translate(24px, -24px)',
+      opacity: 0,
+    },
+  },
+})
